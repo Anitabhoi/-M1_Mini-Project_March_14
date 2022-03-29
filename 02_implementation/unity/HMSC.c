@@ -90,6 +90,7 @@ struct CustomerDetails   //STRUCTURE DECLARATION
 	char period[10];
 	char arrivaldate[10];
 }s;
+#if 0
 int main(){     // MAIN FUNCTION	
 	int i=0;	
 	time_t t;
@@ -192,6 +193,7 @@ int main(){     // MAIN FUNCTION
 		}
 	}
 }
+# endif
 void add()
 {
 	FILE *f;
