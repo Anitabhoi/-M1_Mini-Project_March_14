@@ -6,14 +6,14 @@ extern void edit();
 extern void delete1();
 extern void search();
 
-void setUp()
-{
+// void setUp()
+// {
 
-}
-void teardown()
-{
+// }
+// void teardown()
+// {
 
-}
+// }
 void test_HMSC(void)
 {
     
