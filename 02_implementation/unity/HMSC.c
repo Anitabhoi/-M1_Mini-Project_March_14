@@ -79,7 +79,7 @@ void login()
 		system("cls");	
 }
 
-struct CustomerDetails   //STRUCTURE DECLARATION
+struct NewCustomerDetails   //STRUCTURE DECLARATION
 {
 	char rnumber[10];
 	char Uname[20];
