@@ -6,7 +6,7 @@ The employee has to perform 3 basic tasks: (1) Adding of rooms to the database (
 
 **Features:**
 
-In this project we have 5 feactures.
+In this project we have 6 feactures.
 
 **1. Book a Room:**
 Hotel receptionist can book rooms as Per Customer Requirements.
@@ -20,7 +20,10 @@ They can Delete Customer database after they checked in out.
 **4. Search Customer Record:**
 They can Search Customer Details.
 
-**5. Exit:**
+**5. Edit Customer Record:**
+They can Modify Customer Details anytime.
+
+**6. Exit:**
 
 ### Advantages
 * Save time on admin tasks.
