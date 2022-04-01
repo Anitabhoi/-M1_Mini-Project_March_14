@@ -29,7 +29,7 @@ void login()
 {
 	
 	int a=0,i=0;
-    char uname[10],c=' '; 
+    char name[10],c=' '; 
     char pword[10],code[10];
     char user[10]="Anita";
     char pass[10]="Anu";
@@ -39,7 +39,7 @@ void login()
 	
     printf("\n  **************************  LOGIN FORM  **************************  ");
     printf(" \n                       ENTER USERNAME:-");
-	scanf("%s", &uname); 
+	scanf("%s", &name); 
 	printf(" \n                       ENTER PASSWORD:-");
 	while(i<10)
 	{
@@ -53,7 +53,7 @@ void login()
 	//char code=pword;
 	i=0;
 	//scanf("%s",&pword); 
-		if(strcmp(uname,user)==0 && strcmp(pword,pass)==0)
+		if(strcmp(name,user)==0 && strcmp(pword,pass)==0)
 	{
 	printf("  \n\n\n       WELCOME !!!! LOGIN IS SUCCESSFUL");
 	
@@ -81,16 +81,16 @@ void login()
 
 struct CustomerDetails   //STRUCTURE DECLARATION
 {
-	char roomnumber[10];
-	char name[20];
-	char address[25];
-	char phonenumber[15];
-	char nationality[15];	
-	char email[20];
-	char period[10];
-	char arrivaldate[10];
+	char rnumber[10];
+	char Uname[20];
+	char Uaddress[25];
+	char Uphonenumber[15];
+	char Unationality[15];	
+	char Uemail[20];
+	char Uperiod[10];
+	char Uarrivaldate[10];
 }s;
-# if 0
+// # if 0
 int main(){     // MAIN FUNCTION	
 	int i=0;	
 	time_t t;
@@ -193,7 +193,7 @@ int main(){     // MAIN FUNCTION
 		}
 	}
 }
-#endif
+// #endif
 void add()
 {
 	FILE *f;
@@ -212,22 +212,22 @@ void add()
 		printf("\n Enter Customer Details:");
 		printf("\n**************************");
 		printf("\n Enter Room number:\n");
-		scanf("\n%s",s.roomnumber);
+		scanf("\n%s",s.rnumber);
 		fflush(stdin);
 		printf("Enter Name:\n");
-		scanf("%s",s.name);
+		scanf("%s",s.Uname);
 		printf("Enter Address:\n");
-		scanf("%s",s.address);
+		scanf("%s",s.Uaddress);
 		printf("Enter Phone Number:\n");
-		scanf("%s",s.phonenumber);
+		scanf("%s",s.Uphonenumber);
 		printf("Enter Nationality:\n");
-		scanf("%s",s.nationality);
+		scanf("%s",s.Unationality);
 		printf("Enter Email:\n");
-		scanf(" %s",s.email);
+		scanf(" %s",s.Uemail);
 		printf("Enter Period(\'x\'days):\n");
-		scanf("%s",&s.period);
+		scanf("%s",&s.Uperiod);
 		printf("Enter Arrival date(dd\\mm\\yyyy):\n");
-		scanf("%s",&s.arrivaldate);
+		scanf("%s",&s.Uarrivaldate);
 		fwrite(&s,sizeof(s),1,f);
 		fflush(stdin);
 		printf("\n\n1 Room is successfully booked!!");
@@ -260,12 +260,12 @@ void list()
 		printf("-");
 	while(fread(&s,sizeof(s),1,f)==1)
 	{
-		/*printf("ROOMNUMBER :\t%s\n",s.roomnumber);
+		/*printf("rnumber :\t%s\n",s.rnumber);
 		printf("NAME:\t%s\n",,s.name);
 		printf("ADDRESS:\t%s\n",s.address);
 		printf("PHONENUMBER:\t%s\n",s.phonenumber);
 		printf("NATIONALITY \n");*/
-		printf("\n%s \t%s \t\t%s \t\t%s \t%s  \t%s  \t     %s  \t  %s",s.roomnumber, s.name , s.address , s.phonenumber ,s.nationality ,s.email,s.period,  s.arrivaldate);
+		printf("\n%s \t%s \t\t%s \t\t%s \t%s  \t%s  \t     %s  \t  %s",s.rnumber, s.Uname , s.Uaddress , s.Uphonenumber ,s.Unationality ,s.Uemail,s.Uperiod,  s.Uarrivaldate);
 	}
 	printf("\n");
 	for(i=0;i<118;i++)
@@ -279,7 +279,7 @@ void delete1()
 {
 	FILE *f,*t;
 	int i=1;
-	char roomnumber[20];
+	char rnumber[20];
 	if((t=fopen("temp.txt","w"))==NULL)
 	exit(0);
 	if((f=fopen("add.txt","r"))==NULL)
@@ -287,10 +287,10 @@ void delete1()
 	system("cls");
 	printf("Enter the Room Number of the hotel to be deleted from the database: \n");
 	fflush(stdin);
-	scanf("%s",roomnumber);
+	scanf("%s",rnumber);
 	while(fread(&s,sizeof(s),1,f)==1)
 	{
-		if(strcmp(s.roomnumber,roomnumber)==0)
+		if(strcmp(s.rnumber,rnumber)==0)
 		{       i=0;
 			continue;
 		}
@@ -312,7 +312,7 @@ void delete1()
 	remove("add.txt");
 	rename("temp.txt","add.txt");
 	printf("\n\nThe Customer is successfully removed....");
-	fclose(f);
+	// fclose(f);
 	fclose(t);
 	getch();
 }
@@ -321,27 +321,27 @@ void search()
 {
 system("cls");
 	FILE *f;
-	char roomnumber[20];
+	char rnumber[20];
 	int flag=1;
 	f=fopen("add.txt","r+");
 	if(f==0)
 		exit(0);
 	fflush(stdin);
 	printf("Enter Room number of the customer to search its details: \n");
-	scanf("%s", roomnumber);
+	scanf("%s", rnumber);
 	while(fread(&s,sizeof(s),1,f)==1)
 	{
-		if(strcmp(s.roomnumber,roomnumber)==0){
+		if(strcmp(s.rnumber,rnumber)==0){
 			flag=0;
 			printf("\n\tRecord Found\n ");
-			printf("\nRoom Number:\t%s",s.roomnumber);
-			printf("\nName:\t%s",s.name);
-			printf("\nAddress:\t%s",s.address);
-			printf("\nPhone number:\t%s",s.phonenumber);
-			printf("\nNationality:\t%s",s.nationality);
-			printf("\nEmail:\t%s",s.email);
-			printf("\nPeriod:\t%s",s.period);
-			printf("\nArrival date:\t%s",s.arrivaldate);
+			printf("\nRoom Number:\t%s",s.rnumber);
+			printf("\nName:\t%s",s.Uname);
+			printf("\nAddress:\t%s",s.Uaddress);
+			printf("\nPhone number:\t%s",s.Uphonenumber);
+			printf("\nNationality:\t%s",s.Unationality);
+			printf("\nEmail:\t%s",s.Uemail);
+			printf("\nPeriod:\t%s",s.Uperiod);
+			printf("\nArrival date:\t%s",s.Uarrivaldate);
 			flag=0;
 			break;
 		}
@@ -357,36 +357,36 @@ void edit()
 {
 	FILE *f;
 	int k=1;
-	char roomnumber[20];
+	char rnumber[20];
 	long int size=sizeof(s);
 	if((f=fopen("add.txt","r+"))==NULL)
 		exit(0);
 	system("cls");
 	printf("Enter Room number of the customer to edit:\n\n");
-	scanf("%[^\n]",roomnumber);
+	scanf("%[^\n]",rnumber);
 	fflush(stdin);
 	while(fread(&s,sizeof(s),1,f)==1)
 	{
-		if(strcmp(s.roomnumber,roomnumber)==0)
+		if(strcmp(s.rnumber,rnumber)==0)
 		{
 			k=0;
 			printf("\nEnter Room Number     :");
-			gets(s.roomnumber);
+			gets(s.rnumber);
 			printf("\nEnter Name    :");
 			fflush(stdin);
-			scanf("%s",&s.name);
+			scanf("%s",&s.Uname);
 			printf("\nEnter Address        :");
-			scanf("%s",&s.address);
+			scanf("%s",&s.Uaddress);
 			printf("\nEnter Phone number :");
-			scanf("%f",&s.phonenumber);
+			scanf("%f",&s.Uphonenumber);
 			printf("\nEnter Nationality :");
-			scanf("%s",&s.nationality);
+			scanf("%s",&s.Unationality);
 			printf("\nEnter Email :");
-			scanf("%s",&s.email);
+			scanf("%s",&s.Uemail);
 			printf("\nEnter Period :");
-			scanf("%s",&s.period);
+			scanf("%s",&s.Uperiod);
 			printf("\nEnter Arrival date :");
-			scanf("%s",&s.arrivaldate);
+			scanf("%s",&s.Uarrivaldate);
 			fseek(f,size,SEEK_CUR);  //to go to desired position infile
 			fwrite(&s,sizeof(s),1,f);
 			break;
