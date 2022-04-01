@@ -90,7 +90,7 @@ struct CustomerDetails   //STRUCTURE DECLARATION
 	char Uperiod[10];
 	char Uarrivaldate[10];
 }s;
-// # if 0
+# if 0
 int main(){     // MAIN FUNCTION	
 	int i=0;	
 	time_t t;
@@ -193,7 +193,7 @@ int main(){     // MAIN FUNCTION
 		}
 	}
 }
-// #endif
+#endif
 void add()
 {
 	FILE *f;
