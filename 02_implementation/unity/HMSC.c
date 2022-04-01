@@ -29,10 +29,10 @@ void login()
 {
 	
     int a=0,i=0;
-    char name[10],c=' '; 
-    char pword[10],code[10];
-    char user[10]="Anita";
-    char pass[10]="Anu";
+    char name1[10],c=' '; 
+    char pword1[10],code[10];
+    char user1[10]="Anita";
+    char pass1[10]="Anu";
     do
 {
 	system("cls");
@@ -43,17 +43,17 @@ void login()
 	printf(" \n                       ENTER PASSWORD:-");
 	while(i<10)
 	{
-	    pword[i]=getch();
-	    c=pword[i];
+	    pword1[i]=getch();
+	    c=pword1[i];
 	    if(c==13) break;
 	    else printf("*");
 	    i++;
 	}
-	pword[i]='\0';
-	//char code=pword;
+	pword1[i]='\0';
+	//char code=pword1;
 	i=0;
-	//scanf("%s",&pword); 
-		if(strcmp(name,user)==0 && strcmp(pword,pass)==0)
+	//scanf("%s",&pword1); 
+		if(strcmp(name1,user1)==0 && strcmp(pword1,pass1)==0)
 	{
 	printf("  \n\n\n       WELCOME !!!! LOGIN IS SUCCESSFUL");
 	
@@ -378,7 +378,7 @@ void edit()
 			printf("\nEnter Address        :");
 			scanf("%s",&s.Uaddress);
 			printf("\nEnter Phone number :");
-			scanf("%f",&s.Uphonenumber);
+			scanf("%s",&s.Uphonenumber);
 			printf("\nEnter Nationality :");
 			scanf("%s",&s.Unationality);
 			printf("\nEnter Email :");
