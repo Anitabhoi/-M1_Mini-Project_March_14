@@ -39,7 +39,7 @@ void login()
 	
     printf("\n  **************************  LOGIN FORM  **************************  ");
     printf(" \n                       ENTER USERNAME:-");
-	scanf("%s", &name); 
+	scanf("%s", &name1); 
 	printf(" \n                       ENTER PASSWORD:-");
 	while(i<10)
 	{
