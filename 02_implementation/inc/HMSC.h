@@ -28,14 +28,14 @@
 
 struct CustomerDetails   //STRUCTURE DECLARATION
 {
-char roomnumber[10];
-	char name[20];
-	char address[25];
-	char phonenumber[15];
-	char nationality[15];	
-	char email[20];
-	char period[10];
-	char arrivaldate[10];
+char rnumber[10];
+	char Uname[20];
+	char Uaddress[25];
+	char Uphonenumber[15];
+	char Unationality[15];	
+	char Uemail[20];
+	char Uperiod[10];
+	char Uarrivaldate[10];
 }s;
 
 /**
@@ -78,10 +78,10 @@ void search();
 
 
 /**
-* @brief Edit data from txt and returns the result 
+* @brief Edit data from text and returns the result 
 * @return Returns edited database which is invoked by user
 */
 
 void edit();
 
-// #endif  /* #define __CALCULATOR_OPERATIONS_H__ */
+
